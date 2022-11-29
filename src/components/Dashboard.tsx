@@ -84,6 +84,7 @@ const Dashboard: React.FC = () => {
             const newColumnOrder = Array.from(columnOrder);
             const [item] = newColumnOrder.splice(source.index, 1);
             newColumnOrder.splice(destination.index, 0, item);
+            console.log({ newColumnOrder, columnOrder })
             setColumnOrder(newColumnOrder);
         }
 
@@ -132,7 +133,7 @@ const Dashboard: React.FC = () => {
                                             {columnOrder.map((column, index) => {
                                                 return <Tasks key={column} todos={context?.state} id={column} index={index} />
                                             })}
-                                            {provided.placeholder}
+                                            <div style={{ maxWidth: '33%' }}>{provided.placeholder}</div>
                                         </TasksWrapper>
 
                                     )}
@@ -193,7 +194,7 @@ const TasksWrapper = styled.div`
     display: flex;
     gap: 20px;
     margin-bottom: 20px;
-    max-width: 100%;
+    /* max-width: 100%; */
 
     @media ${MediaType.TABLET_LANDSCAPE} {
         flex-direction: column;

@@ -90,9 +90,10 @@ const TasksWrapper = styled.div`
     height: 100%;
     box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.2),
             2px 4px 4px hsl(0deg 0% 0% / 0.2);
-
+    /* flex-shrink:0; */
     @media ${MediaType.MOBILE_PORTRAIT} {
         padding: 12px;
+        width: 100%;
     }
 `;
 
