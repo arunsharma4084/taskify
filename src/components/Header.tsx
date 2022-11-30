@@ -43,7 +43,7 @@ const SubWrapper = styled.div`
     align-items: center;
 
     @media ${MediaType.MOBILE_PORTRAIT} {
-        padding: 0 16px;
+        padding: 4px 16px;
     }
 `;
 

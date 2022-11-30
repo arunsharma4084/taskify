@@ -133,19 +133,16 @@ const Dashboard: React.FC = () => {
                                             {columnOrder.map((column, index) => {
                                                 return <Tasks key={column} todos={context?.state} id={column} index={index} />
                                             })}
-                                            <div style={{ maxWidth: '33%' }}>{provided.placeholder}</div>
+                                            {provided.placeholder}
                                         </TasksWrapper>
 
                                     )}
                                 </Droppable>
                             </DragDropContext>)
                     }
-                    {/* <ReactTooltip id="task" className="tooltip" effect="solid" border borderColor="black" backgroundColor="hsl(210deg, 25%, 96%)" textColor="black" place="top" /> */}
-
                     <Link style={{ textDecoration: 'none' }} to="/dashboard/add">
                         <Button> Add New Task </Button>
                     </Link>
-
                 </FilterContext.Provider >
             </SubWrapper>
         </Wrapper >
@@ -169,7 +166,7 @@ const SubWrapper = styled.div`
     box-shadow: inset 0px 4px 4px hsl(0deg 0% 0% / 0.4);
 
     @media ${MediaType.MOBILE_PORTRAIT} {
-        padding: 16px;
+        padding: 20px 16px;
     }
 `;
 
@@ -193,13 +190,11 @@ const TasksDescription = styled.h2`
 const TasksWrapper = styled.div`
     display: flex;
     gap: 20px;
-    margin-bottom: 20px;
-    /* max-width: 100%; */
+    margin-bottom: 24px;
 
     @media ${MediaType.TABLET_LANDSCAPE} {
         flex-direction: column;
-        gap: 16px;
-        margin-bottom: 16px;
+        margin-bottom: 20px;
     }
 `;
 

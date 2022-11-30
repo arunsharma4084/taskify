@@ -42,7 +42,8 @@ const Tasks: React.FC<TasksProps> = ({ todos, id, index }): JSX.Element => {
                     style={{
                         backgroundColor: snapshot.isDragging ?
                             id === 'incomplete' ? "hsl(35, 85%, 86%)" : "hsl(173, 92%, 44%)"
-                            : "hsl(210deg, 25%, 96%)"
+                            : "hsl(210deg, 25%, 96%)",
+                        ...provided.draggableProps.style
                     }}
                 >
                     <Heading {...provided.dragHandleProps}>{heading}</Heading>
@@ -53,7 +54,7 @@ const Tasks: React.FC<TasksProps> = ({ todos, id, index }): JSX.Element => {
                                 style={{
                                     backgroundColor: snapshot.isDraggingOver ?
                                         id === 'incomplete' ? "hsla(35, 85%, 86%, 0.25)" : "hsla(173, 92%, 44%, 0.25)"
-                                        : "hsl(210deg, 25%, 96%)"
+                                        : "hsl(210deg, 25%, 96%)",
                                 }}
                             >
                                 {arrangedTasks?.length === 0 ?
@@ -90,7 +91,8 @@ const TasksWrapper = styled.div`
     height: 100%;
     box-shadow: 1px 2px 2px hsl(0deg 0% 0% / 0.2),
             2px 4px 4px hsl(0deg 0% 0% / 0.2);
-    /* flex-shrink:0; */
+    flex-shrink:0;
+
     @media ${MediaType.MOBILE_PORTRAIT} {
         padding: 12px;
         width: 100%;
